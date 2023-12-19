@@ -1,0 +1,21 @@
+{
+  "name": "foerdeliebe/kirby-cache",
+  "description": "",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "homepage": "https://github.com/foerdeliebe/kirby-cache",
+  "version": "1.0.0-beta.1",
+  "authors": [
+    {
+      "name": "Stephan Ploehn",
+      "email": "stephan@foerdeliebe.com",
+      "homepage": "https://foerdeliebe.com"
+    }
+  ],
+  "require": {
+    "getkirby/composer-installer": "^1.2"
+  },
+  "extra": {
+    "installer-name": "cache"
+  }
+}
