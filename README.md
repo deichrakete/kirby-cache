@@ -1,6 +1,6 @@
 # Simple Kirby cache plugin
 
-This is a simple cache plugin for Kirby, a file-based CMS. At the moment it allows you to add a cache-buster for the css() and js() functions and to set the `Last-Modified` header.
+This is a simple cache plugin for Kirby, a file-based CMS. At the moment it allows you to add a cache-buster for the `css()` and `js()` functions and to set the `Last-Modified` header.
 
 ## Ideas 🚀
 

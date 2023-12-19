@@ -9,6 +9,7 @@
 
 use Kirby\Cms\App as Kirby;
 use Kirby\Cms\Page;
+use Kirby\Http\Response;
 use Kirby\Cms\Url;
 use Kirby\Filesystem\F;
 
@@ -51,9 +52,9 @@ Kirby::plugin('foerdeliebe/cache', [
         },
     ],
     'hooks' => [
-        'route:after' => function ($result): Page
+        'route:after' => function ($result): Page|Response|null
         {
-            if (option('foerdeliebe.cache.last-modified')) {
+            if (option('foerdeliebe.cache.last-modified') && $result instanceof Page) {
                 header('Last-Modified: ' . $result->modified('F d Y H:i:s.'));
             }
             return $result;
