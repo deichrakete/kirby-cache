@@ -56,7 +56,7 @@ Kirby::plugin('foerdeliebe/cache', [
         'route:after' => function ($result): Page|Response|Responder|null
         {
             if (option('foerdeliebe.cache.last-modified') && $result instanceof Page) {
-                header('Last-Modified: ' . $result->modified('F d Y H:i:s.'));
+                header('Last-Modified: ' . date('F, d m Y H:i:s e', $result->modified()));
             }
             return $result;
         },
