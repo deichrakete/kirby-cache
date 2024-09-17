@@ -1,15 +1,15 @@
 {
-  "name": "foerdeliebe/kirby-cache",
+  "name": "deichrakete/kirby-cache",
   "description": "",
   "type": "kirby-plugin",
   "license": "MIT",
-  "homepage": "https://github.com/foerdeliebe/kirby-cache",
-  "version": "1.0.0-beta.1",
+  "homepage": "https://github.com/deichrakete/kirby-cache",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Stephan Ploehn",
-      "email": "stephan@foerdeliebe.com",
-      "homepage": "https://foerdeliebe.com"
+      "email": "stephan@deichrakete.com",
+      "homepage": "https://deichrakete.com"
     }
   ],
   "require": {

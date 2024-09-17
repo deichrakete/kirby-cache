@@ -1,16 +1,6 @@
 <?php
-/**
- * Cache Plugin
- *
- * @version   1.0.0-beta.1
- * @link      https://github.com/foerdeliebe/kirby-cache
- * @license   MIT
- */
 
 use Kirby\Cms\App as Kirby;
-use Kirby\Cms\Page;
-use Kirby\Cms\Responder;
-use Kirby\Http\Response;
 use Kirby\Cms\Url;
 use Kirby\Filesystem\F;
 
@@ -33,11 +23,11 @@ function getFileModfied(Kirby $kirby, string $file): string
     return $file;
 }
 
-Kirby::plugin('foerdeliebe/cache', [
+Kirby::plugin('deichrakete/cache', [
     'components' => [
         'css' => function (Kirby $kirby, string $url, $options = null): string
         {
-            if (option('foerdeliebe.cache.buster.css')) {
+            if (option('deichrakete.cache.buster.css')) {
                 return getFileModfied($kirby, $url);
             }
 
@@ -45,27 +35,17 @@ Kirby::plugin('foerdeliebe/cache', [
         },
         'js' => function (Kirby $kirby, string $url, $options = null): string
         {
-            if (option('foerdeliebe.cache.buster.js')) {
+            if (option('deichrakete.cache.buster.js')) {
                 return getFileModfied($kirby, $url);
             }
 
             return $url;
         },
     ],
-    'hooks' => [
-        'route:after' => function ($result): Page|Response|Responder|null
-        {
-            if (option('foerdeliebe.cache.last-modified') && $result instanceof Page) {
-                header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $result->modified()) . ' GMT');
-            }
-            return $result;
-        },
-    ],
     'options' => [
         'buster' => [
             'css' => true,
             'js' => true,
-        ],
-        'last-modified' => true,
+        ]
     ],
 ]);
